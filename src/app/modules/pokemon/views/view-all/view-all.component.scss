@@ -1,0 +1,28 @@
+.container {
+
+  mat-card {
+    mat-card-content {
+      .result {
+        display: flex;
+        flex-flow: row wrap;
+        align-items: center;
+        justify-content: space-evenly;
+
+        .pokemon-cart {
+          display: flex;
+          flex-direction: column;
+          border: solid 1px var(--color-yellow-shadow);
+          margin: 2em 2em 0 0;
+          padding: 2em;
+
+          a {
+            margin: 2em;
+            padding: 1em;
+          }
+        }
+      }
+
+    }
+  }
+}
+

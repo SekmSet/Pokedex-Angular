@@ -1,0 +1,40 @@
+<div class="container">
+  <div class="loader" *ngIf="spinner; else elseBlock">
+    <mat-spinner></mat-spinner>
+  </div>
+
+  <ng-template #elseBlock >
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>
+          <h2>{{nameUppercase}}</h2>
+        </mat-card-title>
+
+        <mat-card-subtitle>
+          <button class="favorite add" mat-icon-button color="accent" aria-label="Add Pokémon to my team">
+            <mat-icon>favorite</mat-icon>
+            Ajouter à mon Pokédex
+          </button>
+
+          <button class="favorite delete" mat-icon-button color="accent" aria-label="Add Pokémon to my team">
+            <mat-icon>favorite</mat-icon>
+            Supprimer de mon Pokédex
+          </button>
+        </mat-card-subtitle>
+      </mat-card-header>
+
+
+      <mat-card-content >
+        <div class="result">
+          <div class="images-sprites">
+            <img class="image-front-default" src="{{pokemonInfo?.sprites?.front_default}}" alt="Front sprite of {{nameUppercase}}">
+            <img class="image-back-default" src="{{pokemonInfo?.sprites?.back_default}}" alt="Back sprite of {{nameUppercase}}">
+          </div>
+        </div>
+      </mat-card-content>
+    </mat-card>
+
+  </ng-template>
+</div>
+
+
