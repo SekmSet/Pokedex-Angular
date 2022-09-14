@@ -12,7 +12,7 @@
       <mat-card-content >
         <div class="result">
           <div class="pokemon-cart" *ngFor="let pokemon of listPokemon">
-            <strong>{{pokemon.nameUppercase}}</strong>
+            <strong>{{pokemon.name |titlecase }}</strong>
             <a mat-raised-button color="primary" routerLink="detail/{{pokemon.name}}" routerLinkActive="active" [routerLinkActiveOptions]="{exact : true}">
               <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="info"></mat-icon>
               Voir détail

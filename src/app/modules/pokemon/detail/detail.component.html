@@ -7,7 +7,7 @@
     <mat-card>
       <mat-card-header>
         <mat-card-title>
-          <h2>{{nameUppercase}}</h2>
+          <h2>{{name |titlecase }}</h2>
         </mat-card-title>
 
         <mat-card-subtitle>
@@ -23,13 +23,40 @@
         </mat-card-subtitle>
       </mat-card-header>
 
-
-      <mat-card-content >
+      <mat-card-content>
         <div class="result">
           <div class="images-sprites">
-            <img class="image-front-default" src="{{pokemonInfo?.sprites?.front_default}}" alt="Front sprite of {{nameUppercase}}">
-            <img class="image-back-default" src="{{pokemonInfo?.sprites?.back_default}}" alt="Back sprite of {{nameUppercase}}">
+            <img class="image-front-default" src="{{pokemonInfo?.sprites?.front_default}}" alt="Front sprite of {{name | titlecase}}">
+            <img class="image-back-default" src="{{pokemonInfo?.sprites?.back_default}}" alt="Back sprite of {{name  | titlecase}}">
           </div>
+        </div>
+
+        <div class="types">
+          <h4>Types</h4>
+          <ul>
+            <li *ngFor="let pokemonTypeInfo of pokemonInfo?.types ">
+              {{pokemonTypeInfo.type.name | titlecase}}
+            </li>
+          </ul>
+        </div>
+
+        <div class="abilities">
+          <h4>Capacités</h4>
+          <ul>
+            <li  *ngFor="let pokemonAbilityInfo of pokemonInfo?.abilities " >
+              {{pokemonAbilityInfo.ability.name | titlecase}}
+            </li>
+          </ul>
+        </div>
+
+        <div class="moves">
+          <h4>Déplacements</h4>
+          <ul>
+            <li  *ngFor="let pokemonMoveInfo of pokemonInfo?.moves ">
+              {{pokemonMoveInfo.move.name | titlecase}}
+
+            </li>
+          </ul>
         </div>
       </mat-card-content>
     </mat-card>

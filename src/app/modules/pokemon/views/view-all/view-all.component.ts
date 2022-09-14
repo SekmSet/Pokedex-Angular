@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import {HttpClient} from "@angular/common/http";
 
 import {PokemonService} from "../../../../services/pokemon.service";
 
@@ -10,13 +9,11 @@ export interface PokemonListResponse {
 
 export interface Pokemon {
   name: string
-  nameUppercase?: string
   url?: string
 }
 
 export interface PokemonOrederByName {
   name: string
-  nameUpperCase?: string
   url?: string
 }
 
@@ -30,8 +27,6 @@ export class ViewAllComponent implements OnInit {
   listPokemon ?: Pokemon[];
   pokemonCount ?: number;
   spinner : boolean = true;
-
-  pokemonNameA ?: PokemonOrederByName[];
 
   /*
   * INJECTION  DE DEPENDANCE
@@ -52,7 +47,6 @@ export class ViewAllComponent implements OnInit {
       this.listPokemon = PokemonListResponse.results.map(result =>({
         // result.sort(),
         name: result.name,
-        nameUppercase: result.name.charAt(0).toUpperCase() + result.name.substring(1).toLowerCase(),
       }));
       this.spinner = false;
     });

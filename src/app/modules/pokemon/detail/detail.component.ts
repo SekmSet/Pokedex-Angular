@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {ActivatedRoute} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
 
 import {PokemonService} from "../../../services/pokemon.service";
 
@@ -41,22 +41,32 @@ interface Type {
 })
 export class DetailComponent implements OnInit {
   name : string | undefined;
-  nameUppercase : string | undefined;
   pokemonInfo ?: PokemonResponse;
   spinner: boolean = true
 
-  constructor(private actRoute: ActivatedRoute, private PokemonService : PokemonService) { }
+  constructor(private actRoute: ActivatedRoute, private router: Router, private PokemonService : PokemonService) { }
 
   ngOnInit(): void {
     this.name = this.actRoute.snapshot.params['name'];
 
     if(this.name !== undefined) {
-      this.nameUppercase =  this.name.charAt(0).toUpperCase() + this.name.substring(1).toLowerCase()
 
-      this.PokemonService.getPokemon(this.name).subscribe(PokemonResponse => {
+      this.PokemonService.getPokemon(this.name).subscribe(
+        PokemonResponse => {
         this.pokemonInfo = PokemonResponse
         this.spinner = false
-      })
+      },
+        err => {
+          console.error('Observer got an error: ' + err)
+          this.router.navigate(['pokemon/detail/not-found/404']);
+        }
+      )
     }
   }
 }
+
+/* Interface VS Type
+* Interface
+*
+* Type
+*/

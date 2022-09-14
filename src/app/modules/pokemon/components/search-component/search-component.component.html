@@ -1,1 +1,8 @@
-<p>search-component works!</p>
+<div class="container">
+  <form class="form">
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-icon>search</mat-icon>
+      <input (keydown.code.enter)="handleChange()" matInput placeholder="Recherche"  [(ngModel)]="value" [ngModelOptions]="{standalone: true}">
+    </mat-form-field>
+  </form>
+</div>

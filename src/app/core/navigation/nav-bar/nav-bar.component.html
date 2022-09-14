@@ -5,7 +5,9 @@
   </a>
 
   <div>
-    <a mat-button routerLink="/pokemon"  routerLinkActive="active" [routerLinkActiveOptions]="{exact : true}">Pokémon</a>
+    <a mat-button routerLink="/pokemon"  routerLinkActive="active" [routerLinkActiveOptions]="{exact : true}">
+      Tous les Pokémons
+    </a>
   </div>
 
   <div>
@@ -30,6 +32,10 @@
           Mon pokédex
         </a>
     </mat-menu>
+  </div>
+
+  <div class="search">
+    <search-component></search-component>
   </div>
 </mat-toolbar>
 

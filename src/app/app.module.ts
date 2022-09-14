@@ -4,13 +4,15 @@ import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatMenuModule} from "@angular/material/menu";
 
+import { NgxContextModule } from 'ngx-context';
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
-import { NavigationModule } from './core/navigation/navigation.module';
 import { MaterialModule } from './core/material/material.module';
 
 import { HomeModule } from './modules/home/home.module';
+import { NavigationModule } from "./core/navigation/navigation.module";
 
 @NgModule({
   declarations: [
@@ -25,7 +27,7 @@ import { HomeModule } from './modules/home/home.module';
     NavigationModule,
     HomeModule,
     HttpClientModule,
-
+    NgxContextModule
   ],
   providers: [],
   bootstrap: [AppComponent]
