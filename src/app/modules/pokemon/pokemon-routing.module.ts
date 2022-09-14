@@ -12,16 +12,16 @@ const routes: Routes = [
   {
     path: 'detail/:name',
     component: DetailComponent,
-    data: { animation: 'queryingPage' }
+    data: { animation: 'queryingPage' },
   },
   {
     path: 'detail/not-found/404',
-    component: PokemonNotFoundComponent
+    component: PokemonNotFoundComponent,
   },
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class PokemonRoutingModule { }
+export class PokemonRoutingModule {}

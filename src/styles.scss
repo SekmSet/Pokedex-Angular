@@ -1,12 +1,16 @@
 /* You can add global styles to this file, and also import other style files */
 
 /* IMPORTS */
-@import url('https://fonts.googleapis.com/css2?family=Rampart+One&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Rampart+One&display=swap");
 
 /* DEFAULT */
-html, body { height: 100%; }
+html,
 body {
-  margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif;
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
   background-color: var(--color-gray);
 }
 
@@ -15,24 +19,29 @@ body {
   --container-width: 1280px;
   --container-gutter: 20px;
 
-  --color-red: #FB1B1B;
-  --color-red-shadpw: #CC0000;
+  --color-red: #fb1b1b;
+  --color-red-shadpw: #cc0000;
 
-  --color-blue-dark: #0A285F;
-  --color-blue-light: #0075BE;
+  --color-blue-dark: #0a285f;
+  --color-blue-light: #0075be;
 
-  --color-yellow: #FFCC00;
-  --color-yellow-shadow: #D5A100;
+  --color-yellow: #ffcc00;
+  --color-yellow-shadow: #d5a100;
 
   --color-black: #000;
-  --color-gray: #DFDFDF;
+  --color-gray: #dfdfdf;
   --color-white-smoke: whitesmoke;
-  --color-white: #FFF;
+  --color-white: #fff;
 }
 
 /* TEXTS AND TITLES */
-h1, h2, h3, h4, h5, h6 {
-  font-family: 'Rampart One', cursive;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Rampart One", cursive;
 }
 
 h1 {
@@ -41,7 +50,11 @@ h1 {
 
 h1 {
   font-size: 3em;
-  background-image: linear-gradient(45deg, var(--color-yellow), var(--color-blue-dark));
+  background-image: linear-gradient(
+    45deg,
+    var(--color-yellow),
+    var(--color-blue-dark)
+  );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -64,10 +77,11 @@ h2 {
 }
 
 .image-banner {
-  width: 100%
+  width: 100%;
 }
 
-.image-front-default, .image-back-default {
+.image-front-default,
+.image-back-default {
   width: 50%;
 }
 
@@ -110,7 +124,3 @@ h2 {
     }
   }
 }
-
-
-
-

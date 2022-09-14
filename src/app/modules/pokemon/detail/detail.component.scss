@@ -2,16 +2,15 @@
   .favorite {
     width: 24em;
     border-radius: 7px;
-    transition:background-color 0.4s linear;
+    transition: background-color 0.4s linear;
 
     mat-icon {
       margin: 0.5em;
     }
 
     &.add {
-
       &:hover {
-        background-color : rgba(255, 64, 129, 0.1);
+        background-color: rgba(255, 64, 129, 0.1);
       }
     }
 
@@ -19,11 +18,8 @@
       color: var(--color-black);
 
       &:hover {
-        background-color : rgba(0, 0, 0, 0.1);
+        background-color: rgba(0, 0, 0, 0.1);
       }
     }
-
-
   }
 }
-

@@ -1,66 +1,64 @@
 import { Component, OnInit } from '@angular/core';
-import {Router} from "@angular/router";
+import { Router } from '@angular/router';
 
-import {PokemonService} from "../../../../services/pokemon.service";
+import { PokemonService } from '../../../../services/pokemon.service';
 
 export interface PokemonResponse {
-  abilities: Abilities[]
-  moves: Moves[]
+  abilities: Abilities[];
+  moves: Moves[];
   sprites: {
-    front_default ?: string
-    back_default ?: string
-  }
-  types : Type[]
+    front_default?: string;
+    back_default?: string;
+  };
+  types: Type[];
 }
 
-export interface Abilities{
-  ability : {
-    name ?: string,
-    url ?: string
-  }
+export interface Abilities {
+  ability: {
+    name?: string;
+    url?: string;
+  };
 }
 
 interface Moves {
-  move:{
-    name ?: string,
-    url ?: string
-  }
+  move: {
+    name?: string;
+    url?: string;
+  };
 }
 
 interface Type {
-  type : {
-    name ?: string,
-    url ?: string
-  }
+  type: {
+    name?: string;
+    url?: string;
+  };
 }
 
 @Component({
   selector: 'search-component',
   templateUrl: './search-component.component.html',
-  styleUrls: ['./search-component.component.scss']
+  styleUrls: ['./search-component.component.scss'],
 })
 export class SearchComponentComponent implements OnInit {
-  value?:string
+  value?: string;
 
-  constructor(private PokemonService : PokemonService, private router: Router) { }
+  constructor(private PokemonService: PokemonService, private router: Router) {}
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
   handleChange() {
-    if(this.value) {
-    const lowercase : string = this.value?.toLowerCase()
+    if (this.value) {
+      const lowercase: string = this.value?.toLowerCase();
       this.PokemonService.getPokemon(lowercase).subscribe(
-        PokemonResponse => {
-          this.value = ''
+        (PokemonResponse) => {
+          this.value = '';
           this.router.navigate([`pokemon/detail/${lowercase}`]);
         },
-        err => {
+        (err) => {
           this.router.navigate(['pokemon/detail/not-found/404']);
-          this.value = ''
+          this.value = '';
         }
-      )
+      );
     }
   }
-
 }

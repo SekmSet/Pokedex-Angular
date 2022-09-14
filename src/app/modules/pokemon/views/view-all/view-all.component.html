@@ -3,26 +3,33 @@
     <mat-spinner></mat-spinner>
   </div>
 
-  <ng-template #elseBlock >
+  <ng-template #elseBlock>
     <mat-card>
       <mat-card-header>
         <h2>List all Pokémons</h2>
       </mat-card-header>
 
-      <mat-card-content >
+      <mat-card-content>
         <div class="result">
           <div class="pokemon-cart" *ngFor="let pokemon of listPokemon">
-            <strong>{{pokemon.name |titlecase }}</strong>
-            <a mat-raised-button color="primary" routerLink="detail/{{pokemon.name}}" routerLinkActive="active" [routerLinkActiveOptions]="{exact : true}">
-              <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="info"></mat-icon>
+            <strong>{{ pokemon.name | titlecase }}</strong>
+            <a
+              mat-raised-button
+              color="primary"
+              routerLink="detail/{{ pokemon.name }}"
+              routerLinkActive="active"
+              [routerLinkActiveOptions]="{ exact: true }"
+            >
+              <mat-icon
+                aria-hidden="false"
+                aria-label="Example home icon"
+                fontIcon="info"
+              ></mat-icon>
               Voir détail
             </a>
           </div>
         </div>
       </mat-card-content>
     </mat-card>
-
   </ng-template>
 </div>
-
-

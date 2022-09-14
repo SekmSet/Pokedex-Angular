@@ -3,46 +3,65 @@
     <mat-spinner></mat-spinner>
   </div>
 
-  <ng-template #elseBlock >
+  <ng-template #elseBlock>
     <mat-card>
       <mat-card-header>
         <mat-card-title>
-          <h2>{{name |titlecase }}</h2>
+          <h2>{{ name | titlecase }}</h2>
         </mat-card-title>
 
-<!--        <div>{{pokedex|json}}</div>-->
+        <!--        <div>{{pokedex|json}}</div>-->
 
         <mat-card-subtitle>
           <div *ngIf="isInMyPokedex; else elseBlock">
-            <button class="favorite delete" mat-icon-button color="accent" aria-label="Add Pokémon to my team" (click)="removeToPokedex()">
+            <button
+              class="favorite delete"
+              mat-icon-button
+              color="accent"
+              aria-label="Add Pokémon to my team"
+              (click)="removeToPokedex()"
+            >
               <mat-icon>favorite</mat-icon>
               Supprimer de mon Pokédex
             </button>
           </div>
 
           <ng-template #elseBlock>
-            <button class="favorite add" mat-icon-button color="accent" aria-label="Add Pokémon to my team" (click)="addToPokedex()">
+            <button
+              class="favorite add"
+              mat-icon-button
+              color="accent"
+              aria-label="Add Pokémon to my team"
+              (click)="addToPokedex()"
+            >
               <mat-icon>favorite</mat-icon>
               Ajouter à mon Pokédex
             </button>
           </ng-template>
-
         </mat-card-subtitle>
       </mat-card-header>
 
       <mat-card-content>
         <div class="result">
           <div class="images-sprites">
-            <img class="image-front-default" src="{{pokemonInfo?.sprites?.front_default}}" alt="Front sprite of {{name | titlecase}}">
-            <img class="image-back-default" src="{{pokemonInfo?.sprites?.back_default}}" alt="Back sprite of {{name  | titlecase}}">
+            <img
+              class="image-front-default"
+              src="{{ pokemonInfo?.sprites?.front_default }}"
+              alt="Front sprite of {{ name | titlecase }}"
+            />
+            <img
+              class="image-back-default"
+              src="{{ pokemonInfo?.sprites?.back_default }}"
+              alt="Back sprite of {{ name | titlecase }}"
+            />
           </div>
         </div>
 
         <div class="types">
           <h4>Types</h4>
           <ul>
-            <li *ngFor="let pokemonTypeInfo of pokemonInfo?.types ">
-              {{pokemonTypeInfo.type.name | titlecase}}
+            <li *ngFor="let pokemonTypeInfo of pokemonInfo?.types">
+              {{ pokemonTypeInfo.type.name | titlecase }}
             </li>
           </ul>
         </div>
@@ -50,8 +69,8 @@
         <div class="abilities">
           <h4>Capacités</h4>
           <ul>
-            <li  *ngFor="let pokemonAbilityInfo of pokemonInfo?.abilities " >
-              {{pokemonAbilityInfo.ability.name | titlecase}}
+            <li *ngFor="let pokemonAbilityInfo of pokemonInfo?.abilities">
+              {{ pokemonAbilityInfo.ability.name | titlecase }}
             </li>
           </ul>
         </div>
@@ -59,16 +78,12 @@
         <div class="moves">
           <h4>Déplacements</h4>
           <ul>
-            <li  *ngFor="let pokemonMoveInfo of pokemonInfo?.moves ">
-              {{pokemonMoveInfo.move.name | titlecase}}
-
+            <li *ngFor="let pokemonMoveInfo of pokemonInfo?.moves">
+              {{ pokemonMoveInfo.move.name | titlecase }}
             </li>
           </ul>
         </div>
       </mat-card-content>
     </mat-card>
-
   </ng-template>
 </div>
-
-

@@ -1,36 +1,81 @@
 <mat-toolbar color="primary">
-  <a mat-button routerLink="/"  routerLinkActive="active" [routerLinkActiveOptions]="{exact : true}">
-    <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="home"></mat-icon>
+  <a
+    mat-button
+    routerLink="/"
+    routerLinkActive="active"
+    [routerLinkActiveOptions]="{ exact: true }"
+  >
+    <mat-icon
+      aria-hidden="false"
+      aria-label="Example home icon"
+      fontIcon="home"
+    ></mat-icon>
     Pokédex
   </a>
 
   <div>
-    <a mat-button routerLink="/pokemon"  routerLinkActive="active" [routerLinkActiveOptions]="{exact : true}">
+    <a
+      mat-button
+      routerLink="/pokemon"
+      routerLinkActive="active"
+      [routerLinkActiveOptions]="{ exact: true }"
+    >
       Tous les Pokémons
     </a>
   </div>
 
   <div>
     <button mat-button [matMenuTriggerFor]="menu">
-      <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="settings"></mat-icon>
+      <mat-icon
+        aria-hidden="false"
+        aria-label="Example home icon"
+        fontIcon="settings"
+      ></mat-icon>
       Compte
     </button>
 
     <mat-menu class="flex-column" #menu="matMenu">
-        <a mat-button routerLink="/profil" routerLinkActive="active" [routerLinkActiveOptions]="{exact : true}">
-          <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="person"></mat-icon>
-          Mon profil
-        </a>
+      <a
+        mat-button
+        routerLink="/profil"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+      >
+        <mat-icon
+          aria-hidden="false"
+          aria-label="Example home icon"
+          fontIcon="person"
+        ></mat-icon>
+        Mon profil
+      </a>
 
-        <a mat-button routerLink="/profil/my-team" routerLinkActive="active" [routerLinkActiveOptions]="{exact : true}">
-          <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="groups"></mat-icon>
-          Mon équipe
-        </a>
+      <a
+        mat-button
+        routerLink="/profil/my-team"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+      >
+        <mat-icon
+          aria-hidden="false"
+          aria-label="Example home icon"
+          fontIcon="groups"
+        ></mat-icon>
+        Mon équipe
+      </a>
 
-        <a mat-button routerLink="/profil/my-pokedex" routerLinkActive="active" [routerLinkActiveOptions]="{exact : true}">
-          <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="menu_book"></mat-icon>
-          Mon pokédex
-        </a>
+      <a
+        mat-button
+        routerLink="/profil/my-pokedex"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+      >
+        <mat-icon
+          aria-hidden="false"
+          aria-label="Example home icon"
+          fontIcon="menu_book"
+        ></mat-icon>
+        Mon pokédex
+      </a>
     </mat-menu>
   </div>
 
@@ -38,5 +83,3 @@
     <search-component></search-component>
   </div>
 </mat-toolbar>
-
-

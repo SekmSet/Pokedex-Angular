@@ -1,11 +1,11 @@
-import {Injectable} from '@angular/core';
-import {BehaviorSubject} from "rxjs";
+import { Injectable } from '@angular/core';
+import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class PokedexService {
-  pokemons$: BehaviorSubject<string[]>
+  pokemons$: BehaviorSubject<string[]>;
 
   constructor() {
     this.pokemons$ = new BehaviorSubject<string[]>([]);
@@ -16,15 +16,20 @@ export class PokedexService {
   }
 
   add(pokemonName: string) {
-    const tmp = [...this.pokemons$.value, pokemonName]
+    const tmp = [...this.pokemons$.value, pokemonName];
     this.setPokemons(tmp);
   }
+
   delete(pokemonName: string) {
-    const tmp = this.pokemons$.value.filter((pokemon) => pokemon !== pokemonName);
+    const tmp = this.pokemons$.value.filter(
+      (pokemon) => pokemon !== pokemonName
+    );
     this.setPokemons(tmp);
   }
 
   exist(pokemonName: string): boolean {
-    return this.pokemons$.value.find(pokemon => pokemon === pokemonName) ? true : false
+    return this.pokemons$.value.find((pokemon) => pokemon === pokemonName)
+      ? true
+      : false;
   }
 }
