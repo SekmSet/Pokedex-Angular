@@ -10,16 +10,23 @@
           <h2>{{name |titlecase }}</h2>
         </mat-card-title>
 
-        <mat-card-subtitle>
-          <button class="favorite add" mat-icon-button color="accent" aria-label="Add Pokémon to my team">
-            <mat-icon>favorite</mat-icon>
-            Ajouter à mon Pokédex
-          </button>
+<!--        <div>{{pokedex|json}}</div>-->
 
-          <button class="favorite delete" mat-icon-button color="accent" aria-label="Add Pokémon to my team">
-            <mat-icon>favorite</mat-icon>
-            Supprimer de mon Pokédex
-          </button>
+        <mat-card-subtitle>
+          <div *ngIf="isInMyPokedex; else elseBlock">
+            <button class="favorite delete" mat-icon-button color="accent" aria-label="Add Pokémon to my team" (click)="removeToPokedex()">
+              <mat-icon>favorite</mat-icon>
+              Supprimer de mon Pokédex
+            </button>
+          </div>
+
+          <ng-template #elseBlock>
+            <button class="favorite add" mat-icon-button color="accent" aria-label="Add Pokémon to my team" (click)="addToPokedex()">
+              <mat-icon>favorite</mat-icon>
+              Ajouter à mon Pokédex
+            </button>
+          </ng-template>
+
         </mat-card-subtitle>
       </mat-card-header>
 

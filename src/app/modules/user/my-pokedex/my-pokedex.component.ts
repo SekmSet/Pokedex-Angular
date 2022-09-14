@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {PokedexService} from "../../../services/pokedex.service";
 
 @Component({
   selector: 'my-pokedex',
@@ -6,10 +7,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./my-pokedex.component.scss']
 })
 export class MyPokedexComponent implements OnInit {
+  pokedex: string[] = []
 
-  constructor() { }
+  constructor(private PokedexService : PokedexService) { }
 
   ngOnInit(): void {
+    this.PokedexService.pokemons$.subscribe((value) => {
+      this.pokedex = value
+    })
   }
 
+  public removeToPokedex(name: string) {
+    this.PokedexService.delete(name)
+  }
 }

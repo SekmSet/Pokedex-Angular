@@ -1,1 +1,15 @@
-<p>my-pokedex works!</p>
+<div class="container">
+  <p>my-pokedex works!</p>
+
+  <ul>
+    <li *ngFor="let pokemon of pokedex">
+      {{pokemon | titlecase}}
+
+      <button class="favorite delete" mat-icon-button color="accent" aria-label="Add Pokémon to my team" (click)="removeToPokedex(pokemon)">
+        <mat-icon>favorite</mat-icon>
+        Supprimer de mon Pokédex
+      </button>
+    </li>
+  </ul>
+
+</div>

@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { MatIconModule } from "@angular/material/icon";
 
 import { UserRoutingModule } from './user-routing.module';
 import { MyTeamComponent } from './my-team/my-team.component';
@@ -13,10 +14,11 @@ import { MyPokedexComponent } from './my-pokedex/my-pokedex.component';
     ProfilComponent,
     MyPokedexComponent
   ],
-  imports: [
-    CommonModule,
-    UserRoutingModule
-  ],
+    imports: [
+        CommonModule,
+        UserRoutingModule,
+        MatIconModule
+    ],
 
 })
 export class UserModule { }
