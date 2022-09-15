@@ -43,10 +43,6 @@ export class ProfilComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  addProfil() {
-    this.newUser = true;
-  }
-
   handleCreateProfil() {
     this.ProfilService.setColor(this.ngColor);
     this.ProfilService.setPseudo(this.ngPseudo);
