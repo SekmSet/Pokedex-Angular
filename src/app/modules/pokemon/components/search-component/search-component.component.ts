@@ -3,37 +3,6 @@ import { Router } from '@angular/router';
 
 import { PokemonService } from '../../../../services/pokemon.service';
 
-export interface PokemonResponse {
-  abilities: Abilities[];
-  moves: Moves[];
-  sprites: {
-    front_default?: string;
-    back_default?: string;
-  };
-  types: Type[];
-}
-
-export interface Abilities {
-  ability: {
-    name?: string;
-    url?: string;
-  };
-}
-
-interface Moves {
-  move: {
-    name?: string;
-    url?: string;
-  };
-}
-
-interface Type {
-  type: {
-    name?: string;
-    url?: string;
-  };
-}
-
 @Component({
   selector: 'search-component',
   templateUrl: './search-component.component.html',

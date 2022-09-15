@@ -1,21 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { PokemonService } from '../../../../services/pokemon.service';
-
-export interface PokemonListResponse {
-  count: number;
-  results: Pokemon[];
-}
-
-export interface Pokemon {
-  name: string;
-  url?: string;
-}
-
-export interface PokemonOrederByName {
-  name: string;
-  url?: string;
-}
+import { Pokemon } from '../../../../interfaces/pokemon';
 
 @Component({
   selector: 'view-all',

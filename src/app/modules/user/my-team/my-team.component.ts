@@ -1,11 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { MyTeamService } from '../../../services/my-team.service';
-
-interface ITeam {
-  name: string;
-  composition: string[];
-}
+import { ITeam } from '../../../interfaces/team';
 
 @Component({
   selector: 'my-team',

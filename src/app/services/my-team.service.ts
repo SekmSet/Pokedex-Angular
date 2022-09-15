@@ -1,10 +1,6 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
-
-interface ITeam {
-  name: string;
-  composition: string[];
-}
+import { ITeam } from '../interfaces/team';
 
 @Injectable({
   providedIn: 'root',
