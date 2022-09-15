@@ -1,20 +1,70 @@
 <div class="container">
-  <p>my-pokedex works!</p>
+  <mat-card>
+    <mat-card-header>
+      <h2>Mon Pokédex</h2>
+    </mat-card-header>
+    <mat-card-subtitle>
+      Nombre de Pokémon dans mon Pokédex : {{pokedex.length}}
+    </mat-card-subtitle>
+    <mat-card-content>
+      <ul>
+        <li *ngFor="let pokemon of pokedex">
+          {{ pokemon | titlecase }}
 
-  <ul>
-    <li *ngFor="let pokemon of pokedex">
-      {{ pokemon | titlecase }}
+          <button
+            class="favorite delete"
+            mat-icon-button
+            color="accent"
+            aria-label="Delete Pokémon to my pokédex"
+            (click)="removeToPokedex(pokemon)"
+          >
+            <mat-icon>favorite</mat-icon>
+            Supprimer de mon Pokédex
+          </button>
 
-      <button
-        class="favorite delete"
-        mat-icon-button
-        color="accent"
-        aria-label="Add Pokémon to my team"
-        (click)="removeToPokedex(pokemon)"
-      >
-        <mat-icon>favorite</mat-icon>
-        Supprimer de mon Pokédex
-      </button>
-    </li>
-  </ul>
+          <button *ngIf="!selectedPokemon.includes(pokemon)"
+            class="team add"
+            mat-icon-button
+            color="accent"
+            aria-label="Add Pokémon to my team"
+            (click)="addToTeamList(pokemon)"
+          >
+            <mat-icon>favorite</mat-icon>
+            Ajouter ce Pokédex à mon équipe
+          </button>
+        </li>
+      </ul>
+    </mat-card-content>
+  </mat-card>
+
+  <div class="pop-up" *ngIf="selectedPokemon.length > 0">
+      <form class="form">
+        <mat-form-field class="example-full-width" appearance="fill">
+          <label>Nom de mon équipe</label>
+          <input
+            matInput
+            placeholder="Equipe 1"
+            [(ngModel)]="value"
+            [ngModelOptions]="{ standalone: true }"
+          />
+        </mat-form-field>
+
+        <button *ngIf="selectedPokemon.length === 6"
+          mat-raised-button
+          color="primary"
+          mat-button
+          (click)="handleCreateTeam()">Créer mon équipe</button>
+      </form>
+    <h3>Pokémons sélectionnés</h3>
+    <ul>
+      <li *ngFor="let pokemon of selectedPokemon">
+        {{ pokemon | titlecase }}
+
+        <button (click)="removeToTeam(pokemon)" mat-mini-fab color="primary" aria-label="Remove pokemon to my list for my next team">
+          <mat-icon>remove</mat-icon>
+        </button>
+      </li>
+    </ul>
+
+  </div>
 </div>

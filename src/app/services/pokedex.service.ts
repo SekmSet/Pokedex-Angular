@@ -28,8 +28,6 @@ export class PokedexService {
   }
 
   exist(pokemonName: string): boolean {
-    return this.pokemons$.value.find((pokemon) => pokemon === pokemonName)
-      ? true
-      : false;
+    return this.pokemons$.value.includes(pokemonName);
   }
 }

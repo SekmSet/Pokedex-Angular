@@ -1,0 +1,39 @@
+.container {
+  .favorite, .team {
+    width: 24em;
+    border-radius: 7px;
+    transition: background-color 0.4s linear;
+
+    mat-icon {
+      margin: 0.5em;
+    }
+
+    &.add {
+      &:hover {
+        background-color: rgba(255, 64, 129, 0.1);
+      }
+    }
+
+    &.delete {
+      color: var(--color-black);
+
+      &:hover {
+        background-color: rgba(0, 0, 0, 0.1);
+      }
+    }
+  }
+
+
+  .pop-up {
+    border: solid 1px var(--color-red);
+    box-shadow: 10px 5px 5px var(--color-yellow);
+    background-color: var(--color-white);
+    width: 20em;
+    height: 30em;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin: 1em;
+    padding: 1em;
+  }
+}

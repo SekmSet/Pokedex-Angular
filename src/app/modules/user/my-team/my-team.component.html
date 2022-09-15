@@ -1,1 +1,37 @@
-<p>my-team works!</p>
+<div class="container">
+  <mat-card>
+    <mat-card-header>
+      <h2>Mes équipes</h2>
+    </mat-card-header>
+    <mat-card-subtitle>
+      Nombre d'équipe : {{teams.length}}
+    </mat-card-subtitle>
+    <mat-card-content>
+      <div class="results" *ngFor="let team of teams">
+        <div class="card-team">
+          <div class="card-team-header">
+            <h3>
+              {{ team.name| titlecase }}
+            </h3>
+            <button
+              class="team delete"
+              mat-icon-button
+              color="accent"
+              aria-label="Delete team to my teams"
+              (click)="removeTeam(team.name)"
+            >
+              <mat-icon>delete</mat-icon>
+              Supprimer mon équipe
+            </button>
+          </div>
+
+
+          <div class="card-team-content" >
+            <div *ngFor="let pokemon of team.composition">{{pokemon}}</div>
+          </div>
+        </div>
+      </div>
+
+    </mat-card-content>
+  </mat-card>
+</div>

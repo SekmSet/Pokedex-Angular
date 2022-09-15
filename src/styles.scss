@@ -20,7 +20,7 @@ body {
   --container-gutter: 20px;
 
   --color-red: #fb1b1b;
-  --color-red-shadpw: #cc0000;
+  --color-red-shadow: #cc0000;
 
   --color-blue-dark: #0a285f;
   --color-blue-light: #0075be;
@@ -61,6 +61,12 @@ h1 {
 
 h2 {
   color: var(--color-blue-dark);
+}
+
+ul {
+  li {
+    list-style: url('/assets/images/_pokeball.png');
+  }
 }
 
 .title-error {

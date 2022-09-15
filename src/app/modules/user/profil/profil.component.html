@@ -1,1 +1,63 @@
-<p>profil works!</p>
+<div class="container">
+  <mat-card>
+    <mat-card-header>
+      <h2>Mon profil</h2>
+    </mat-card-header>
+    <mat-card-subtitle>
+      <button
+        color="primary"
+        mat-raised-button
+        (click)="addProfil()">
+        Ajouter mon profi
+      </button>
+    </mat-card-subtitle>
+
+    <mat-card-content>
+      <div class="new-user" *ngIf="newUser; else elseBlock">
+        <form class="form">
+          <mat-form-field appearance="fill">
+            <label>Nom nom de joueur</label>
+            <input
+              matInput
+              placeholder="SekhmSet"
+              [(ngModel)]="ngPseudo"
+              [ngModelOptions]="{ standalone: true }"
+            />
+          </mat-form-field>
+
+          <mat-form-field appearance="fill">
+            <mat-label>Equipe</mat-label>
+            <mat-select [(ngModel)]='ngColor'  [ngModelOptions]="{ standalone: true }">
+              <mat-option value="red">Equipe Rouge</mat-option>
+              <mat-option value="yellow">Equipe Jaune</mat-option>
+              <mat-option value="blue">Equipe Bleu</mat-option>
+            </mat-select>
+          </mat-form-field>
+
+          <button
+                  mat-raised-button
+                  color="primary"
+                  mat-button
+                  (click)="handleCreateProfil()">Créer mon profil</button>
+        </form>
+      </div>
+
+      <ng-template #elseBlock>
+       <p>
+         Joueur (-euse) {{pseudo}}
+       </p>
+        <p>
+          Equipe {{color | titlecase}}
+        </p>
+
+        <p>
+          Nombre de Pokémon dans le Pokédex {{pokemons }}
+        </p>
+
+        <p>
+          Nombre d'équipe {{teams}}
+        </p>
+      </ng-template>
+    </mat-card-content>
+  </mat-card>
+</div>

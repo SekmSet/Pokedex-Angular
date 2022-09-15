@@ -8,7 +8,9 @@
       <mat-card-header>
         <h2>List all Pokémons</h2>
       </mat-card-header>
-
+      <mat-card-subtitle>
+        Nombre de résultat : {{listPokemon?.length}}
+      </mat-card-subtitle>
       <mat-card-content>
         <div class="result">
           <div class="pokemon-cart" *ngFor="let pokemon of listPokemon">
